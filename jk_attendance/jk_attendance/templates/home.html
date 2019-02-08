@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Jamatkhana Attendance Log-in</h2>
+<p>
+    Welcome {%if user.is_authenticated %}{{ user.username }}{%else%}Visitor{%endif%}!
+</p>
+{% endblock %}

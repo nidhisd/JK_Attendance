@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Mark Your Attendance</h2>
+    <p> THis is page where you mark Attendance </p>
+    <form action="/attendance/mark_attendance/" method="post">
+      {% csrf_token %}
+      Enter Barcode: <input type="text" name="barcode" value = {{ participant.barcode }}><br>
+      <input type="submit" value="Submit">
+    </form>
+{% endblock %}

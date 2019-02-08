@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="center">LeaderBoard</h2>
+    <div class="container teal lighten-5 center">
+            <table class=" highlight centered">
+                    <thead>
+                        <tr>
+                            <th>Participant</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>    
+                    <tbody>
+                        {% for i in participant_list %}
+                        <tr> 
+                            <td>{{ i.first_name }}</td>
+                            <td>{{ i.points }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>            
+                </table>
+    </div>
+
+{% endblock %}

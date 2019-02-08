@@ -1,0 +1,29 @@
+.navbar-material .nav-wrapper .brand-logo img {
+    height: 64px;
+}
+body {
+    background: #d26335;
+  }
+  nav.navbar-material {
+    background: #d26335;
+    border: none;
+    box-shadow: none;
+  }
+  .navbar-material .nav-wrapper {
+    background: white;
+    margin: 20px;
+  }
+  .navbar-material .nav-wrapper > ul > li > a {
+    color: black;
+  }
+  .navbar-material .nav-wrapper .brand-logo img {
+    height: 64px;
+  }
+  .navbar-material .nav-wrapper .button-collapse i {
+    color: black;
+  }
+  @media (max-width: 600px) {
+    .navbar-material .nav-wrapper .brand-logo img {
+      height: 56px;
+    }
+  }
