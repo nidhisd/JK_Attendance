@@ -8,46 +8,49 @@
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'attendance/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'attendance/css/animate.css' %}" type="text/css">
+    
     
 </head>
 <body>
-    <nav>
-        <div class="nav-wrapper teal lighten-3 text-black">
-            <!--<a class="brand-logo" href="{% url 'home' %}" >
-                <img class="responsive-img" src="{% static '/attendance/Jarp1.jpg' %}"/> 
-            </a>-->
-            {% if user.is_authenticated %}
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{% url 'mark_attendance' %}">Submit Attendance</a></li>
-                    <li><a href="{% url 'leaderboard' %}">Leaderboard</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                </ul>
-            {% else %}
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <!--<li><a href="{% url 'signup' %}">Sign Up</a></li>-->
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    <!--<li><a href="{% url 'leaderboard' %}">Leaderboard</a></li>-->
-                </ul>
-            {% endif %}
+    <header>
+            <nav>
+                    <div class="nav-wrapper teal lighten-3 text-black">
+                        <!--<a class="brand-logo" href="{% url 'home' %}" >
+                            <img class="responsive-img" src="{% static '/attendance/Jarp1.jpg' %}"/> 
+                        </a>-->
+                        {% if user.is_authenticated %}
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <li><a href="{% url 'mark_attendance' %}">Submit Attendance</a></li>
+                                <li><a href="{% url 'leaderboard' %}">Leaderboard</a></li>
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                            </ul>
+                        {% else %}
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <!--<li><a href="{% url 'signup' %}">Sign Up</a></li>-->
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <!--<li><a href="{% url 'leaderboard' %}">Leaderboard</a></li>-->
+                            </ul>
+                        {% endif %}
+                    </div>
+                </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="page-footer teal lighten-3">
+        <div class="footer-copyright teal lighten-3">
+            <div class="container center teal lighten-3">
+                <p class="center teal-text">Made with <i class="material-icons ">favorite</i> by 
+                <a href="https://www.instagram.com/nimoz_soul/" class="white-text">Nimoz Solutions Inc.</a>
+                </p>
+            </div>>
         </div>
-    </nav>
-    <hr>
-    {% block content %}
-    {% endblock %}
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   <div class="container">
-</div>
-    </footer>
-   </div>
-    <footer class="page-footer teal lighten-5">
-        <div class="footer-copyright">
-            <div class="container">
-                    © 2019 Copyright NiMoZ Solutions
-                <a href="https://www.instagram.com/nimoz_soul/" class="black-text center">
-                <i class="fa fa-instagram"></i>
-                </a>
-            </div></div>
-    </footer>
 </body>
 </html>

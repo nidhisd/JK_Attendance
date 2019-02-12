@@ -47,7 +47,7 @@ def get_am_pm(cd):
     morning_start = datetime.time(3, 0, 0)
     morning_end = datetime.time(12, 0, 0)
     evening_start = datetime.time(12, 0, 0)
-    evening_end = datetime.time(22, 0, 0)
+    evening_end = datetime.time(23, 59, 59)
     if morning_start <= current_time <= morning_end :
         return 'AM'
     elif evening_start <= current_time <= evening_end :
@@ -67,12 +67,12 @@ def update_points(participant_id, total_points):
     participant.points = total_points
     participant.save()
 
-def get_points(am_pm):
+def get_points(participant, am_pm, request):
     ''' 
         This method will decide points depending on time_of_day 
     '''
     if am_pm is None:
-        return render(request, 'not_eligible_to_mark.html', {'firstname': firstname})
+        return render(request, 'not_eligible_to_mark.html', {'firstname': participant.first_name})
     else:
         if am_pm == 'AM':
             points = 10
@@ -99,7 +99,7 @@ def mark_attendance(request):
         else:
             current_date_time = timezone.localtime(timezone.now())
             am_pm = get_am_pm(current_date_time)
-            points = get_points(am_pm)
+            points = get_points(participant, am_pm, request)
             print(points)
             try:
                 attendance = Attendance.objects.create(participant = participant,

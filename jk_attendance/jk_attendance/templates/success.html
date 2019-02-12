@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <meta http-equiv="refresh" content="3;url=/attendance/mark_attendance" />
-<h2>Jamatkhana Attendance Log-in</h2>
-<p>
-    Thank you for marking attendance {{ first_name }}, your current points are {{ points }}!
-</p>
+<h2 class="center">Jamatkhana Attendance Log-in</h2>
+<p
+h5 class="center animated jello">
+        Thank you for marking attendance <em class="teal-text">{{ first_name }}</em> , your current points are 
+        <em class="teal-text">{{ points }}</em> !<br>
+        Great Job!!
+</h5>
 {% endblock %}

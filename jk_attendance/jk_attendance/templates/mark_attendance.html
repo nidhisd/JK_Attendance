@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Mark Your Attendance</h2>
-    <p> THis is page where you mark Attendance </p>
+
+  <h2 class="center teal-text">Mark Your Attendance!</h2>
+  <div class="container teal lighten-5 center">
     <form action="/attendance/mark_attendance/" method="post">
       {% csrf_token %}
-      Enter Barcode: <input type="text" name="barcode" value = {{ participant.barcode }}><br>
-      <input type="submit" value="Submit">
+      <input placeholder="Barcode Number" type="text" id="barcode" name="barcode" value = {{ participant.barcode }}><br>
+      <label for="barcode">Barcode Number</label><br>
+      <button class="btn waves-effect waves-light" type="submit" name="Submit">Submit
+        <i class="material-icons right">send</i>
+      </button>
     </form>
+  </div>
+    
 {% endblock %}
