@@ -3,7 +3,7 @@ django-bootstrap4==0.0.7
 django-excel-response2==2.0.8
 django-six==1.0.4
 gunicorn==19.9.0
-psycopg2==2.7.7
+psycopg2-binary==2.7.7
 pytz==2018.9
 screen==1.0.1
 whitenoise==4.1.2
