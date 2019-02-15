@@ -16,13 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from jk_attendance.attendance import views
-from jk_attendance.attendance.forms import LoginForm
+
 
 
 
 urlpatterns = [
     path('', views.home, name='index'),
-    path('accounts/login', include('django.contrib.auth.urls')),
+    path('login/', include('django.contrib.auth.urls')),
     path('attendance/', include('jk_attendance.attendance.urls')),
     path('admin/', admin.site.urls),
 ]

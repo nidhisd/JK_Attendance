@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container center">
-        <h2 class="teal-text" aria-modal="true">Jamatkhana Attendance Program.</h2>
-        <h6 class="teal-text">
-            An initiative towards maximizing community involvement of kids!
-        </h6><br><br>
-        <form method="post" action="">
-                {% csrf_token %}
-            <button class="btn teal lighten-3" type="Submit">Login to Continue</button>
-        </form>
-        
-            
+    <h2 class="teal-text" aria-modal="true">Jamatkhana Attendance Program.</h2>
+    <h6 class="teal-text">
+        An initiative towards maximizing interactive community involvement of kids through rewards program!
+    </h6><br><br>
+    <form method="post" action="/attendance/accounts/loginlogin/">
+        {% csrf_token %}
+        <button class="btn teal lighten-3" type="Submit">Login to Continue</button>
+    </form>
 </div>
 
 {% endblock %}

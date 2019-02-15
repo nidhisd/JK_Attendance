@@ -19,8 +19,8 @@ from django.contrib.auth  import views as view_1
 from jk_attendance.attendance.forms import LoginForm
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    
+    path('', views.home, name='home'),   
+    path('accounts/login', include('django.contrib.auth.urls')),
     path('signup/', views.signup, name='signup'),
     path('leaderboard', views.leaderboard, name='leaderboard'),
     path('mark_attendance/', views.mark_attendance, name='mark_attendance')
