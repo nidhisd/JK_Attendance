@@ -1,1 +1,1 @@
-web: sh -c 'cd ./jk_attendance gunicorn jk_attendance.wsgi:application --log-file -'
+web: sh -c 'cd ./jk_attendance/ && exec gunicorn jk_attendance.wsgi --log-file -'
