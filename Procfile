@@ -1,1 +1,1 @@
-web: gunicorn jk_attendance.wsgi --log-file -
+web: gunicorn jk_attendance.wsgi:application --log-file -
