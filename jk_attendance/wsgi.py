@@ -12,7 +12,7 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'jk_attendance.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'jk_attendance.jk_attendance.settings')
 
 application = get_wsgi_application()
 
