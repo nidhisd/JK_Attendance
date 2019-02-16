@@ -89,6 +89,8 @@ DATABASES = {
     }
 }
 
+print(f'ENGINE {os.environ.get("ENGINE")} PORT {os.environ.get("PORT")}')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
